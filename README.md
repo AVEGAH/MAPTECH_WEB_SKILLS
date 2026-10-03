@@ -15,7 +15,7 @@ It was made while redesigning **[maptechgh.com](https://www.maptechgh.com)** ("M
 
 | Skill | What it does | Download |
 |---|---|---|
-| ⭐ **web-experience-pro** | **All-in-one:** every skill below in one, plus a new **Premium polish** mode that makes any app look expensive (premium audit score + recipe + 5 luxury theme presets) and a **Full pipeline** mode that reviews → designs → builds → polishes → re-reviews. Install this one if you only want one. | [zip](web-experience-pro.zip) |
+| ⭐ **web-experience-pro** | **All-in-one:** every skill below in one, plus a new **Premium polish** mode that makes any app look expensive (premium audit score + recipe + 5 luxury theme presets) and a **Full pipeline** mode that reviews → designs → builds → polishes → re-reviews, and a **Style library** of 8 curated design directions (from [Refero Styles](https://styles.refero.design)) — or paste any Refero style link and it adapts it to your site. Install this one if you only want one. | [zip](web-experience-pro.zip) |
 | **site-redesign-5-variants** | Redesigns an existing site safely — shows 5 design directions first, then applies your pick in stages. | [zip](site-redesign-5-variants.zip) |
 | **ui-ux-pro-max** | Design brain for apps & sites: picks the right style, colours, font pairing, spacing and layout for your product type, builds it, and checks it on phone + desktop. | [zip](ui-ux-pro-max.zip) |
 | **bug-hunt-review** | Strict code reviewer: walks through a diff/PR/folder, hunts real bugs & security holes (SQL injection, double refunds, race conditions…), proves them, and gives a fix for each with a ship/don't-ship verdict. | [zip](bug-hunt-review.zip) |
