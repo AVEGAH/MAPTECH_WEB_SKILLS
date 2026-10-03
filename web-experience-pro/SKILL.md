@@ -1,11 +1,11 @@
 ---
 name: web-experience-pro
-description: All-in-one web and app studio — UI/UX design system, premium visual polish, ready-made components, safe full-site redesign with 5 variants, and strict bug/security code review. Use when asked to design, redesign, restyle, make an app look premium, build UI components or sections, or review code for bugs before shipping.
+description: All-in-one web and app studio — UI/UX design system, premium visual polish, a curated style library (incl. Refero DESIGN.md styles), ready-made components, safe full-site redesign with 5 variants, and strict bug/security code review. Use when asked to design, redesign, restyle, make an app look premium, give it a nice style, build UI components or sections, or review code for bugs before shipping.
 ---
 
 # Web Experience Pro (all-in-one)
 
-One skill with six modes. Pick the mode from the request, or chain them with **Full pipeline**.
+One skill with seven modes. Pick the mode from the request, or chain them with **Full pipeline**.
 You act as a senior product designer + front-end engineer + strict code reviewer.
 
 | Mode | Use when the user says… |
@@ -16,6 +16,7 @@ You act as a senior product designer + front-end engineer + strict code reviewer
 | **D. Site redesign (5 variants)** | "redesign my whole site", "new look", "revamp" + gives source code |
 | **E. Bug hunt review** | "review this code / PR / diff", "check for bugs", "is it safe to upload?" |
 | **F. Full pipeline** | "do everything", "make my app premium and make sure nothing breaks" |
+| **G. Style library** | "pick a nice style", "make it look like Linear/Wise/…", pastes a styles.refero.design link or a DESIGN.md |
 
 ## Rules for every mode
 - **Keep logic intact.** Never rename form field names, form actions, routes, CSRF tokens, element IDs
@@ -158,7 +159,7 @@ Deliver as a before/after screenshot set plus the changed files; show the audit 
    Summarise what exists and what looks broken.
 2. **Five directions, then STOP:** one self-contained preview HTML with a switcher between 5 genuinely
    different directions (layout, density, personality — not just colour), e.g. dark premium, clean light
-   fintech, bold colourful, minimal mono, glassy gradient. Each shows dashboard, Buy Data (network + bundle
+   fintech, bold colourful, minimal mono, glassy gradient — or draw them from the **Mode G** library. Each shows dashboard, Buy Data (network + bundle
    picker) and a phone view with realistic content. Add a table: name · idea · when it's right · downside.
    Wait for the pick (they may mix: "2 and 4").
 3. **Apply in stages** (confirm or adjust): 1) design system + layouts + home + auth + dashboard;
@@ -215,3 +216,118 @@ For "do everything" requests, run in order and pause only where marked:
 5. **Mode D step 3** with **Mode B** polish, stage by stage (each stage delivered + checked).
 6. **Mode E** again on everything changed → fix Critical/High → final verdict.
 7. Hand over: stage folders + INSTALL files, before/after screenshots, premium audit scores, review verdict.
+
+---
+
+## Mode G — Style library (curated from Refero Styles)
+Ready-made, proven design directions distilled from **styles.refero.design** (2,000+ AI-readable design
+systems taken from top product sites). Use them as starting points for Mode A/B/D, or when the user asks
+for "a nice style".
+
+### Rules (always)
+- **Inspired by, never a clone.** Use the system (palette logic, type scale, radius, depth, layout rhythm) —
+  never another company's name, logo, wordmark, illustrations, copy or product imagery. Rename the theme
+  for the user's brand.
+- **No proprietary fonts.** Swap brand fonts for free Google Fonts equivalents (given below).
+- **Adapt to the product:** keep the user's brand colour if they have one (put it in the accent slot),
+  keep cedi/phone formatting, 360px mobile rules, all Mode A UX states, and contrast ≥ 4.5:1.
+- Show the chosen preset (or 3–5 of them side by side) in a preview before applying it site-wide.
+
+### Using any Refero style the user links
+1. User pastes `https://styles.refero.design/style/<id>` (or a DESIGN.md). Fetch it with the web-fetch tool
+   (the sandbox shell usually can't reach it). Extract colours (name, hex, role), fonts + weights + scale,
+   spacing base, radius set, depth technique, signature components, do's and don'ts.
+2. Map it onto the token set from Mode A (`--bg --surface --text --primary …`), swap proprietary fonts,
+   add any missing states (danger/success/warning, focus) in the same spirit.
+3. Apply the rules above, preview, then build. Credit "style inspired by <site> via Refero" in the notes only.
+
+### Curated presets (best fits for fintech / reseller / SaaS dashboards)
+| # | Preset | Mood | Best for |
+|---|---|---|---|
+| 1 | Forest Lime | friendly money, bold | wallets, transfers, data reseller home |
+| 2 | Highlighter Ledger | calm finance, editorial | admin/finance dashboards, B2B |
+| 3 | Midnight Lime | dark, precise, techy | dashboards, power users, dark theme |
+| 4 | Graphite Hairline | minimal mono, developer-clean | SaaS, docs, API/VTU developer portals |
+| 5 | Keycap Dark | dark premium, tactile | apps, launchers, premium dark mode |
+| 6 | Ember Corporate | confident, high-trust | business accounts, landing pages |
+| 7 | Parchment Teal | quiet, warm, readable | search, support, content-heavy pages |
+| 8 | Eggshell Pill | soft luxury, editorial | premium landing pages, brand sites |
+
+**1. Forest Lime** (inspired by Wise)
+- Colours: ink `#163300` (text, nav, dark sections) · CTA lime `#9fe870` · headline `#0e0f0c` · body `#454745` ·
+  surface `#e8ebe6` · canvas `#ffffff` · deep green `#054d28` · soft highlight `#e2f6d5`.
+- Type: Inter 400–700 for UI; display headlines in a heavy grotesk (Inter 800/900 or Archivo Black), tight
+  negative tracking (≈ −0.03em). Scale 1.2 from 18px.
+- Shape: pill (9999px) for buttons/tags/nav, 10px cards/inputs, 28px large cards; 4px grid, 24px card padding.
+- Signature: lime pill CTA with no shadow; dark forest sections with lime text; flag/network logos in circles.
+- Don't: more than one lime element per viewport; gradients or drop shadows beyond hairlines.
+
+**2. Highlighter Ledger** (inspired by Ramp)
+- Colours: accent yellow `#e4f222` (actions, live counters, active) · ink `#0c0a08` · dark panel `#1a1919` ·
+  cards `#ffffff` · canvas `#f4f2f0` · muted `#6d6c6b` · hairline `#e5e7eb` · skeleton `#d3d3d3`.
+- Type: single weight 400 everywhere (Inter / Instrument Sans) — hierarchy by size only; display 64/1.0,
+  heading 28/1.14, body 16/1.5, 10px uppercase captions with 0.018em tracking.
+- Shape: 6px buttons/tags, 10px inputs, 12–16px cards; borders not shadows (1px `#e5e7eb` on white).
+- Signature: yellow filled CTA with ink text; big live numbers; left-aligned everything.
+- Don't: bold weights, extra accent colours, card shadows, centred body text, stock illustrations.
+
+**3. Midnight Lime** (inspired by Linear)
+- Colours: canvas `#08090a` · card `#0f1011` · raised `#161718` · border `#23252a` / `#383b3f` · text ramp
+  `#62666d` → `#8a8f98` → `#d0d6e0` → `#ffffff` · single CTA `#e4f222` · tag colours green `#27a644`,
+  violet `#6366f1`, teal `#02b8cc`.
+- Type: Inter (weights 400/500/600 max, never 700), display 48–72px line-height 1.0 tracking −0.022em;
+  JetBrains Mono for IDs, shortcuts, references.
+- Shape: 6px buttons/inputs, 12px cards, 4px badges, pills for filters; 1px inset hairline borders, no outer
+  shadows between card and canvas; 96px section gaps.
+- Don't: second chromatic CTA, cards with 16px+ radius, coloured body text.
+
+**4. Graphite Hairline** (inspired by Vercel)
+- Colours: canvas `#fafafa` · cards `#ffffff` · hairline `#ebebeb` · text `#171717` / `#4d4d4d` / `#666666` ·
+  success/link `#297a3a`.
+- Type: Geist Sans 400–500 (headlines 450, tracking −0.05 to −0.06em at 30–64px), Geist Mono 11–12px
+  UPPERCASE (+0.07em) for labels, metadata, codes, order IDs. Both are free on Google Fonts.
+- Shape: 6px cards/buttons, pills for compact nav; depth only via ring shadows
+  (`0 0 0 1px rgba(0,0,0,.08)`); compact 16px card padding, 96–128px section gaps.
+- Signature: black filled button `#171717`, ghost hairline button, terminal-style status rows with ✓ in green.
+- Don't: drop shadows, radius > 6px on rectangles, bold headlines, extra colours.
+
+**5. Keycap Dark** (inspired by Raycast)
+- Colours: canvas `#040506` · card `#07080a` · well `#111214` · muted text `#6a6b6c` / `#9c9c9d` ·
+  headings `#ffffff` · neutral CTA fill `#e6e6e6` with text `#454647` · brand spark `#ff6363` (logo/badge only) ·
+  hero glow blues `#63a1ff` / `#143ca3`.
+- Type: Inter 400–600, hero 56px weight 400; Geist Mono for version/metadata.
+- Shape: 8px buttons/inputs, 16–20px cards, 8px grid. "Keycap" card depth:
+  `inset 0 1px 0 rgba(255,255,255,.05), 0 0 0 1px rgba(255,255,255,.08), inset 0 -1px 0 rgba(0,0,0,.2)`.
+- Signature: floating glass pill nav (backdrop-blur, 1px `#363739` border), atmospheric gradient hero.
+- Don't: coloured action buttons, light sections, accent on text.
+
+**6. Ember Corporate** (inspired by Brex)
+- Colours: action orange `#ff5900` · text `#000000` · canvas `#ffffff` · surface/inputs `#f3f3f7` ·
+  body `#60646c` · caption `#6f737b` · icons `#8b8d98` · hairline `#b9bbc6` · footer `#000710` · bar `#15191e`.
+- Type: Inter 400–600 with negative tracking on every size; hero headlines in an elegant serif
+  (Newsreader / Fraunces 500, 48px+, line-height 1.11).
+- Shape: 12px buttons/inputs/cards, 6px chips; no card shadows (surface contrast + hairlines); 48–80px gaps.
+- Signature: email/phone input with attached orange button; dark multi-column footer; announcement bar.
+- Don't: second accent, serif below 48px.
+
+**7. Parchment Teal** (inspired by Perplexity)
+- Colours: canvas `#faf8f5` · raised `#fdfbfa` · hairline `#d1d1cd` · muted `#92918b` · secondary `#72706b` ·
+  text `#27251e` · accent teal `#016a71` (active nav, NEW badge, focus glow only).
+- Type: Inter or Manrope 400/500 only; compact — 16 body, 14 UI, 12 micro labels.
+- Shape: 16px cards, 12px inputs/filled buttons, 6px ghost buttons, pill chips; one tiny shadow
+  `0 1px 2px rgba(0,0,0,.08)`; max content width 900px.
+- Signature: search-first layout, suggestion cards with icon + title + line, teal-filled active sidebar item.
+- Don't: pure white, bold weights, gradients, teal in body text.
+
+**8. Eggshell Pill** (inspired by ElevenLabs)
+- Colours: canvas `#fdfcfc` · band/feature cards `#f5f3f1` · hairline `#ebe8e4` · text `#000000` ·
+  strong secondary `#44403b` · body `#777169` · faint `#a59f97` · illustration-only sparks `#0447ff` + `#ff4704`.
+- Type: display in a light weight (Manrope / Inter Tight 300, 32–48px, −0.02em); body Inter 400/500 with
+  +0.01em at 14–16px.
+- Shape: every button/tag a pill; 20–24px cards with 32px padding, no border/shadow; 4px inputs;
+  96px+ section gaps; max 1280px.
+- Signature: black pill + eggshell outline pill as the only buttons; soft gradient orb as hero art.
+- Don't: pure white, bold display, using the sparks on UI controls, sharp card corners.
+
+**Pairing tip for data-reseller sites:** Forest Lime or Highlighter Ledger for the customer app (light),
+Midnight Lime or Keycap Dark as the dark theme, Graphite Hairline for the admin panel.
